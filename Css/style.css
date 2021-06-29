@@ -8,7 +8,10 @@
     --header-bg: #78A7DB;
     --button-color: ;
     --header-font-size: 21px;  
-
+    --task-bg: #E6F5FF;
+    --task-bg-hover: #CFDCE6;
+    --completed-task-bg: #F49595;
+    --completed-task-bg-hover: rgb(236, 105, 105);
 }
 
 /*Header */
@@ -108,35 +111,47 @@ header{
 }
 
 .card{
-    background: rgb(175, 168, 168);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 7px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 1rem 3rem;
+    width: 90%;
+    height: 35vh;
+}
+
+.card-title{
+    font-size: 20px;
+    margin-bottom: 1rem;
 }
 
 .task-card{
     margin-bottom: 1rem;
 }
 
-.tasks{
+.tasks > .task{
     background: #E6F5FF;
 }
 
+.tasks > .task:hover{
+    background: #CFDCE6;
+}
+
 .task{
-    margin: 0rem 1rem; 
+    width: 100%;
+    margin: 0rem 0rem; 
     height: 35px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.tasks:hover{
-    background: #CFDCE6;
-}
-
 .task-checkboxes{
     background-color: #FFF4CC;
+    margin-left: 10px;
 }
 
 .task-information{
@@ -161,6 +176,7 @@ img.edit-task{
 img.delete-task{
     width: 25px;
     cursor: pointer;
+    margin-right: 10px; 
 }
 
 .hover{
@@ -172,6 +188,15 @@ img.delete-task:hover{
 }
 
 
+/* completed */
+
+.completed-tasks > .task{
+    background: var(--completed-task-bg);
+}
+
+.completed-tasks > .task:hover{
+    background: var(--completed-task-bg-hover);
+}
 
 
 /* Category menu */
