@@ -75,7 +75,8 @@ header{
 /* Add tasks section */
 
 .add-task-section{
-    margin: 2rem 0rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
     padding-bottom: 2rem;
 }
 
@@ -101,6 +102,75 @@ header{
 }
 
 /* task and completed section */
+
+.tasks-wrapper{
+    width: 100%;
+}
+
+.card{
+    background: rgb(175, 168, 168);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 3rem;
+}
+
+.task-card{
+    margin-bottom: 1rem;
+}
+
+.tasks{
+    background: #E6F5FF;
+}
+
+.task{
+    margin: 0rem 1rem; 
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tasks:hover{
+    background: #CFDCE6;
+}
+
+.task-checkboxes{
+    background-color: #FFF4CC;
+}
+
+.task-information{
+    width: 95%; 
+    background: transparent;
+    font-size: 18px;
+    border: none;
+    padding: 1rem; 
+    cursor: default;
+}
+
+.task-information:focus{
+    outline: none; 
+}
+
+img.edit-task{
+    width: 25px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+img.delete-task{
+    width: 25px;
+    cursor: pointer;
+}
+
+.hover{
+    display: none;
+}
+
+img.delete-task:hover{
+    
+}
+
 
 
 
