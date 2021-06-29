@@ -53,19 +53,20 @@
             </label>
         </div>
     </header>
-    <div>
-        <div class="card">
+    <div class="tasks-wrapper">
+        <div class="card task-card">
             <p class="card-title">Tasks</p>
             <div class="tasks">
                 <div class="task">
-                    <input type="checkbox" class="task-checkboxes"/>
-                    <p class="task-information"> Task is </p>
+                    <input type="checkbox" class="task-checkboxes" >
+                    <input class="task-information" value="" readonly>
                     <img class="edit-task" src="../Assets/editing.png" alt="edit task"> <!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
-                    <img class="delete-task" src="../Assets/trash-can.png" alt="delete task">
+                    <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
+                    <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card completed-card">
             <p class="card-title">Completed</p>
             <div class="completed-tasks">
         
@@ -75,10 +76,11 @@
     
     <template class="task-template">
         <div class="task">
-            <input type="checkbox" class="task-checkboxes"/>
-            <p class="task-information"></p>
-            <img class="edit-task" src="../Assets/editing.png" alt="edit task">
-            <img class="delete-task" src="../Assets/trash-can.png" alt="delete task">
+            <input type="checkbox" class="task-checkboxes" >
+            <input class="task-information" value="" readonly>
+            <img class="edit-task" src="../Assets/editing.png" alt="edit task"> <!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+            <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
+            <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
         </div>
     </template>
 </body>
