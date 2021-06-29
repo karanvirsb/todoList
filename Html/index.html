@@ -34,18 +34,21 @@
                 <span class="menu-bar"></span>
                 <span class="menu-bar"></span>
             </div>
-            <div class="remaining-tasks">
-                <p>Task Remaining: <span id="tasks-left"></span></p>
-            </div>
-            <div id="todo-title">
-                <h1>school</h1>
-            </div>
-            <div class="completed">
-                <p>Completed: <span id="completed"></span> </p>
+            <div class="todo-info">
+                <div class="remaining-tasks">
+                    <p>Task Remaining: <span id="tasks-left"></span></p>
+                </div>
+                <div class="todo-title">
+                    <h1 id="todo-title">school</h1>
+                </div>
+                <div class="completed">
+                    <p>Completed: <span id="completed"></span> </p>
+                </div>
             </div>
         </div>
         <div class="add-task-header">
-            <label for="add-task">
+            <label class="add-task-label" for="add-task"> 
+                <p>Task:</p> 
                 <input type="text" id="add-task" placeholder="Add new task">
                 <button>add task</button>
             </label>
