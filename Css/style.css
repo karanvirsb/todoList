@@ -40,6 +40,7 @@ header{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    cursor: pointer;
 }
 
 .menu-bar{
@@ -88,8 +89,20 @@ header{
 
 #add-task{
     width: 75%;
-    height: 30px;
+    height: 45px;
+    border-radius: 7px 0px 0px 7px;
+    border: solid 2px black;
+    padding: 0em 2rem; 
+    font-size: 18px; 
 }
+
+#add-task:focus{
+    outline: none; 
+}
+
+/* task and completed section */
+
+
 
 /* Category menu */
 
@@ -104,7 +117,21 @@ header{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 15px;
+    cursor: pointer;
 }
 
+.btn:hover{
+    background: #E8BA68;
+}
 /* add new task btn */
+
+.add-task-btn{
+    width: max-content; 
+    text-transform: uppercase;
+    padding: 0.75rem; 
+    margin-left: -2px;
+    border: solid 2px black;
+    border-left: none;
+    border-radius: 0px 7px 7px 0px;
+}
 
