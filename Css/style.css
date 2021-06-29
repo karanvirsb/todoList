@@ -3,3 +3,87 @@
     margin: 0px;
     padding: 0px;
 }
+
+:root{
+    --header-bg: #78A7DB;
+    --button-color: ;
+    --header-font-size: 21px;  
+
+}
+
+/*Header */
+header{
+    width: 100%;
+    background: var(--header-bg);
+    padding: 0rem 2.5rem;
+    border-radius: 0px 0px 7px 7px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.info-header{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0rem 0rem; 
+}
+
+/* menu button */
+.menu{
+    background: #000;
+    width: 40px;
+    height: 40px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu-bar{
+    width: 30px;
+    background: #fff;
+    height: 3px; 
+} 
+
+
+.todo-info{
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0rem 4rem;
+}
+
+.remaining-tasks{
+    font-size: var(--header-font-size);
+}
+
+#todo-title{
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.completed{
+    font-size: var(--header-font-size);
+}
+
+/* Add tasks section */
+
+.add-task-label{
+    font-size: var(--header-font-size);
+    margin-right: 25px;
+}
+
+/* Category menu */
+
+.side-menu{
+    display:none; 
+}
+
+
+
+
+/*buttons*/
+
+
