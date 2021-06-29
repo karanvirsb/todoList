@@ -15,8 +15,8 @@
                 <img id="close-category" src="../Assets/close.png" alt="close category menu">
             </div>
             <div class="add-new-category">
-                <input type="text" placeholder="Add new category" aria-details="add new category">
-                <button id="add-category-btn">add category</button>
+                <input id="add-category" type="text" placeholder="Add new category" aria-details="add new category">
+                <button id="add-category-btn" class="btn">add category</button>
             </div>
         </div>
         <div class="category-body">
@@ -27,54 +27,56 @@
             <button id="resetBtn">reset All</button>
         </div>
     </div>
-    <header>
-        <div class="info-header">
-            <div class="menu">
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-            </div>
-            <div class="todo-info">
-                <div class="remaining-tasks">
-                    <p>Task Remaining: <span id="tasks-left"></span></p>
+    <div class="wrapper">
+        <header>
+            <div class="info-header">
+                <div class="menu">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
                 </div>
-                <div class="todo-title">
-                    <h1 id="todo-title">school</h1>
-                </div>
-                <div class="completed">
-                    <p>Completed: <span id="completed"></span> </p>
-                </div>
-            </div>
-        </div>
-        <div class="add-task-section">
-            <label class="add-task-label" for="add-task"> 
-                <input type="text" id="add-task" placeholder="Add new task">
-                <button class="btn add-task-btn">add task</button>
-            </label>
-        </div>
-    </header>
-    <div class="tasks-wrapper">
-        <div class="card task-card">
-            <p class="card-title">Tasks</p>
-            <div class="tasks">
-                <div class="task">
-                    <input type="checkbox" class="task-checkboxes" >
-                    <input class="task-information" value="gfgf" readonly>
-                    <img class="edit-task" src="../Assets/editing.png" alt="edit task"> <!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
-                    <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
-                    <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
+                <div class="todo-info">
+                    <div class="remaining-tasks">
+                        <p>Task Remaining: <span id="tasks-left"></span></p>
+                    </div>
+                    <div class="todo-title">
+                        <h1 id="todo-title">school</h1>
+                    </div>
+                    <div class="completed">
+                        <p>Completed: <span id="completed"></span> </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card completed-card">
-            <p class="card-title">Completed</p>
-            <div class="completed-tasks">
-                <div class="task">
-                    <input type="checkbox" class="task-checkboxes" >
-                    <input class="task-information" value="gfgf" readonly>
-                    <img class="edit-task" src="../Assets/editing.png" alt="edit task"> <!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
-                    <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
-                    <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
+            <div class="add-task-section">
+                <label class="add-task-label" for="add-task"> 
+                    <input type="text" id="add-task" placeholder="Add new task">
+                    <button class="btn add-task-btn">add task</button>
+                </label>
+            </div>
+        </header>
+        <div class="tasks-wrapper">
+            <div class="card task-card">
+                <p class="card-title">Tasks</p>
+                <div class="tasks">
+                    <div class="task">
+                        <input type="checkbox" class="task-checkboxes" >
+                        <input class="task-information" value="gfgf" readonly>
+                        <img class="edit-task" src="../Assets/editing.png" alt="edit task"> <!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+                        <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
+                        <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
+                    </div>
+                </div>
+            </div>
+            <div class="card completed-card">
+                <p class="card-title">Completed</p>
+                <div class="completed-tasks">
+                    <div class="task">
+                        <input type="checkbox" class="task-checkboxes" >
+                        <input class="task-information" value="gfgf" readonly>
+                        <img class="restore-task" src="../Assets/restore.png" alt="restore task"> <!--<div>Icons made by <a href="https://www.flaticon.com/authors/kirill-kazachek" title="Kirill Kazachek">Kirill Kazachek</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
+                        <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
+                    </div>
                 </div>
             </div>
         </div>
