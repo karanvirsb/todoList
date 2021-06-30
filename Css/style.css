@@ -226,7 +226,7 @@ label #menu{
 }
 
 .task-information:focus{
-    outline: none; 
+    outline: 0.1px solid black; 
 }
 
 img.edit-task{
