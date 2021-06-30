@@ -6,35 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="../Css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <input type="checkbox" id="check"> 
+    <label for="check">
+        <i class="fa fa-bars" id ="menu"></i>
+        <i class="fa fa-times" id ="cancel"></i>
+    </label>
     <div class="side-menu">
-        <div class="category-header">
-            <div class="category-title">
-                <h1>CATEGORIES</h1>
-                <img id="close-category" src="../Assets/close.png" alt="close category menu">
+        <div class="category-wrapper">
+            <div class="category-header">
+                <div class="category-title">
+                    <h1>CATEGORIES</h1>
+                </div>
+                <div class="add-new-category">
+                    <input id="add-category" type="text" placeholder="Add new category" aria-details="add new category">
+                    <button id="add-category-btn" class="btn">add category</button>
+                </div>
             </div>
-            <div class="add-new-category">
-                <input id="add-category" type="text" placeholder="Add new category" aria-details="add new category">
-                <button id="add-category-btn" class="btn">add category</button>
+            <div class="category-body">
+                <ul class="category-list">
+                    <li class="category-item">
+                        <button class="category">school</button>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="category-body">
-            <button class="category">school</button>
-        </div>
-        <div class="category-footer">
-            <button id="clearBtn">clear All</button>
-            <button id="resetBtn">reset All</button>
+            <div class="category-footer">
+                <button id="clearBtn" class="cate-btn">clear All</button>
+                <button id="resetBtn" class="cate-btn">reset All</button>
+            </div>
         </div>
     </div>
     <div class="wrapper">
         <header>
             <div class="info-header">
-                <div class="menu">
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
-                </div>
                 <div class="todo-info">
                     <div class="remaining-tasks">
                         <p>Task Remaining: <span id="tasks-left"></span></p>
@@ -87,6 +93,15 @@
             <input type="checkbox" class="task-checkboxes" >
             <input class="task-information" value="" readonly>
             <img class="edit-task" src="../Assets/editing.png" alt="edit task"> <!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+            <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
+            <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
+        </div>
+    </template>
+    <template class="completed-template">
+        <div class="task">
+            <input type="checkbox" class="task-checkboxes" >
+            <input class="task-information" value="gfgf" readonly>
+            <img class="restore-task" src="../Assets/restore.png" alt="restore task"> <!--<div>Icons made by <a href="https://www.flaticon.com/authors/kirill-kazachek" title="Kirill Kazachek">Kirill Kazachek</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
             <img class="delete-task main-trash-can" src="../Assets/trash-can.png" alt="delete task">
             <img class="delete-task hover" src="../Assets/trash-can.png" alt="delete task">
         </div>
