@@ -20,10 +20,6 @@ body{
     --completed-task-bg-hover: rgb(236, 105, 105);
 }
 
-.wrapper{
-    /* margin-left: 300px; */
-}
-
 /*Header */
 header{
     position: relative;
@@ -243,14 +239,6 @@ img.delete-task{
     width: 25px;
     cursor: pointer;
     margin-right: 10px; 
-}
-
-.hover{
-    display: none;
-}
-
-img.delete-task:hover{
-    
 }
 
 
