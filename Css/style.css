@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+}
+
+body{
+    font-family: 'Roboto', monospace, sans-serif;
 }
 
 :root{
@@ -48,7 +54,7 @@ label #cancel{
     position: absolute;
     cursor: pointer;
     left: -50px;
-    top: 14px;
+    top: 32px;
     z-index: 111;
     font-size: 30px;
     transition: 0.5s ease-out;
@@ -75,10 +81,7 @@ label #menu{
 
 #check:checked ~ label #menu {
     transition: 0.5s ease-out;
-    top: 14px;
-    left: 300px;
     opacity: 0%;
-    z-index: 1122;
     transform: scale(0.5); 
 }
 
@@ -189,6 +192,10 @@ label #menu{
     margin-bottom: 1rem;
 }
 
+.tasks{
+    overflow-y: auto;
+}
+
 .tasks > .task{
     background: #E6F5FF;
 }
@@ -199,12 +206,14 @@ label #menu{
 
 .task{
     width: 100%;
-    margin: 0rem 0rem; 
-    height: 35px;
+    margin: 10px 0rem; 
+    min-height: 35px;
+    max-height: max-content;
     display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 7px;
+    overflow-y: hidden;
 }
 
 .task-checkboxes{
@@ -213,11 +222,10 @@ label #menu{
 }
 
 .task-information{
+    display: inline;
     width: 95%; 
-    background: transparent;
     font-size: 18px;
-    border: none;
-    padding: 1rem; 
+    margin: 1rem 2rem; 
     cursor: default;
 }
 
@@ -248,6 +256,10 @@ img.delete-task:hover{
 
 /* completed */
 
+.completed-tasks{
+    overflow-y: auto;
+}
+
 .completed-tasks > .task{
     background: var(--completed-task-bg);
 }
@@ -258,6 +270,7 @@ img.delete-task:hover{
 
 .completed-tasks .task-information{
     text-decoration: line-through;
+
 }
 
 .restore-task{
@@ -294,7 +307,7 @@ img.delete-task:hover{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px;
+    margin: 30px 0px;
 }
 
 
@@ -336,11 +349,38 @@ img.delete-task:hover{
 }
 
 .category-body{
-    margin: 0rem 1rem; 
+    margin-left: 1rem;
+    overflow-y: auto; 
 }
 
 .category-list{
+    width: 100%;
     list-style-type: none;
+}
+
+.category-item {
+    padding: 1rem;
+    cursor: pointer; 
+    display: flex;
+    flex-direction: row;
+}
+
+.category-item:hover{
+    background: var(--button-color);
+}
+
+.category-item p{
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 75%;
+}
+
+.delete-category{
+    width: 25px;
+    justify-self: flex-end;
+    position: relative;
+    left: 50px; 
 }
 
 .category-footer{
@@ -373,5 +413,23 @@ img.delete-task:hover{
     border: solid 2px black;
     border-left: none;
     border-radius: 0px 7px 7px 0px;
+}
+
+/* clear all and reset button */
+
+.cate-btn{
+    background: #E2C082;
+    padding: 1rem;
+    margin-bottom: 10px; 
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 7px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cate-btn:hover{
+    background: #e4b159;
 }
 
