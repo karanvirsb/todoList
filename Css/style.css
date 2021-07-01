@@ -211,11 +211,11 @@ label #menu{
     overflow-y: auto;
 }
 
-.task-item > .task{
+.task-item {
     background: #E6F5FF;
 }
 
-.task-item > .task:hover{
+.task-item:hover{
     background: #CFDCE6;
 }
 
@@ -268,11 +268,11 @@ img.delete-task{
     overflow-y: auto;
 }
 
-.completed-item > .task{
+.completed-item{
     background: var(--completed-task-bg);
 }
 
-.completed-item > .task:hover{
+.completed-item:hover{
     background: var(--completed-task-bg-hover);
 }
 
