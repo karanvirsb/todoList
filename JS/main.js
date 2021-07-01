@@ -18,4 +18,5 @@ addGlobalEventListener('click', '.trash-can', e=>{
 
     if(confirm(`Are you sure you want to remove this ${e.target}`))
         remove_item.remove(); 
+        renderCounts();
 });
