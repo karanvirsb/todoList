@@ -192,11 +192,11 @@ label #menu{
     overflow-y: auto;
 }
 
-.tasks > .task{
+.task-item > .task{
     background: #E6F5FF;
 }
 
-.tasks > .task:hover{
+.task-item > .task:hover{
     background: #CFDCE6;
 }
 
@@ -248,15 +248,15 @@ img.delete-task{
     overflow-y: auto;
 }
 
-.completed-tasks > .task{
+.completed-item > .task{
     background: var(--completed-task-bg);
 }
 
-.completed-tasks > .task:hover{
+.completed-item > .task:hover{
     background: var(--completed-task-bg-hover);
 }
 
-.completed-tasks .task-information{
+.completed-item .task-information{
     text-decoration: line-through;
 
 }
