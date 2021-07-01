@@ -16,11 +16,9 @@ function taskRemaining(){
     const taskLeft = tasksSection.children.length;
     if(taskLeft <= 1 ? taskRemainingName.innerText = 'Task' : taskRemainingName.innerText = 'Tasks')
     tasksRemaining.innerHTML = taskLeft; 
-    console.log(taskLeft);
 }
 
 function tasksCompleted(){
     const taskComplete = completedTasksSection.children.length;
     taskCompleted.innerHTML = taskComplete; 
-    console.log(taskComplete);
 }
