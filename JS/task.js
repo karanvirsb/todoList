@@ -1,5 +1,6 @@
-const completed_task_template = document.querySelector('.completed-template').content.children[0];
-const task_template = document.querySelector('.task-template').content.children[0];
+
+const completed_task_template = document.querySelector('.completed-template');
+const task_template = document.querySelector('.task-template');
 
 const completedTask = document.querySelector('#completed-tasks');
 const tasks = document.querySelector('#tasks'); 
@@ -31,13 +32,12 @@ addGlobalEventListener('focusout', '.task-information', e =>{
 // this is working on moving the task to the completed section 
 
 addGlobalEventListener('click', '.task-checkboxes', e=>{
-    const task = e.target.parentElement; 
-    const taskLi = task.parentElement;  
+    const task = e.target.parentElement;   
     const taskInfo  = task.querySelector('.task-information').innerHTML.trim();
     
-    if(taskLi.parentElement.id === task_parent_id){
+    if(task.parentElement.id === task_parent_id){
         moveTo(taskInfo, completed_parent_id);
-        tasks.removeChild(taskLi);
+        tasks.removeChild(task);
         renderCounts();
     }
 })
@@ -46,34 +46,34 @@ addGlobalEventListener('click', '.task-checkboxes', e=>{
 // This will restore the task back upto tasks from completed
 
 addGlobalEventListener('click', '.restore-task', e => {
-    const task = e.target.parentElement;
-    const taskLi = task.parentElement;  
+    const task = e.target.parentElement; 
     const taskInfo = task.querySelector('.task-information').innerHTML.trim();
+
     moveTo(taskInfo , task_parent_id); 
-    completedTask.removeChild(taskLi);
+    completedTask.removeChild(task);
     renderCounts();
 });
 
 
 function moveTo(taskDetails, section){
 
-    const completeTemp = completed_task_template;
-    const taskTemp = task_template;
+    const completeTemp = completed_task_template.cloneNode(true);
+    const taskTemp = task_template.cloneNode(true); 
+ 
     let li; 
     switch(section){
         case completed_parent_id: 
-
-            li = makeTaskLi(['completed-item']);
-            completeTemp.querySelector('.task-information').innerText = taskDetails; 
-            li.appendChild(completeTemp)
+            li = makeTaskLi(['completed-item', 'task']);
+            completeTemp.content.querySelector('.task-information').innerText = taskDetails; 
+            li.append(completeTemp.content);   
             completedTask.appendChild(li);
             break;
 
         case task_parent_id:
 
-            li = makeTaskLi(['task-item']);
-            taskTemp.querySelector('.task-information').innerText = taskDetails;
-            li.appendChild(taskTemp); 
+            li = makeTaskLi(['task-item', 'task']);
+            taskTemp.content.querySelector('.task-information').innerText = taskDetails;
+            li.appendChild(taskTemp.content); 
             tasks.appendChild(li);
             break; 
 
@@ -84,11 +84,8 @@ function moveTo(taskDetails, section){
    
 }
 
-function makeTaskLi(...arr){
+function makeTaskLi(arr){
     const li = document.createElement('li');
-    arr.forEach(name => {
-        li.classList.add(name); 
-    });
-
+    li.classList.add(...arr);
     return li; 
 }
