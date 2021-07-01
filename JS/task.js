@@ -35,6 +35,7 @@ addGlobalEventListener('click', '.task-checkboxes', e=>{
     if(task.parentElement.id === task_parent_id){
         moveTo(taskInfo, completed_parent_id);
         task.remove();
+        renderCounts();
     }
 })
 
@@ -46,20 +47,14 @@ addGlobalEventListener('click', '.restore-task', e => {
     const taskInfo = task.querySelector('.task-information').innerHTML.trim();
     moveTo(taskInfo , task_parent_id); 
     setTimeout(completedTask.removeChild(task), 10000);
-    
+    renderCounts();
 });
 
 
 function moveTo(taskDetails, section){
 
-    console.log(completed_task_template);
-    console.log(task_template);
-
     const completeTemp = completed_task_template;
     const taskTemp = task_template;
-    
-    console.log(completeTemp);
-    console.log(taskTemp);
 
     switch(section){
         case completed_parent_id: 
