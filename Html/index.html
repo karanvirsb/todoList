@@ -11,6 +11,7 @@
     <script defer src="../JS/trashCanHover.js"></script>
     <script defer src="../JS/task.js"></script>
     <script defer src="../JS/taskCalculation.js"></script>
+    <script defer src="../JS/addListItems.js"></script>
    
 </head>
 <body>
@@ -27,9 +28,11 @@
                 <div class="category-title">
                     <h1>CATEGORIES</h1>
                 </div>
-                <div class="add-new-category">
-                    <input id="add-category" type="text" placeholder="Add new category" aria-details="add new category">
-                    <button id="add-category-btn" class="btn">add category</button>
+                <div >
+                    <form action="" class="add-new-category" id="category-form">
+                        <input id="add-category" type="text" placeholder="Add new category" aria-details="add new category">
+                        <button id="add-category-btn" class="btn">add category</button>
+                    </form>
                 </div>
             </div>
             <div class="category-body">
@@ -66,16 +69,18 @@
                 </div>
             </div>
             <div class="add-task-section">
-                <label class="add-task-label" for="add-task"> 
-                    <input type="text" id="add-task" placeholder="Add new task">
-                    <button class="btn add-task-btn">add task</button>
-                </label>
+                <form action="" id="task-form">
+                    <label class="add-task-label" for="add-task"> 
+                            <input type="text" id="add-task" placeholder="Add new task">
+                            <button id="add-task-btn" class="btn add-task-btn">add task</button>
+                    </label>
+                </form>
             </div>
         </header>
         <div class="tasks-wrapper">
             <div class="card task-card">
                 <p class="card-title">Tasks</p>
-                <div >
+                <div id='task-div'>
                     <ul id="tasks" class="tasks">
                         <li class="task-item task">
                             <input type="checkbox" class="task-checkboxes" >
@@ -90,7 +95,7 @@
             </div>
             <div class="card completed-card">
                 <p class="card-title">Completed</p>
-                <div >
+                <div id="completed-div">
                     <ul id="completed-tasks" class="completed-tasks">
                         <li class="completed-item task">
                             <input type="checkbox" class="task-checkboxes">
