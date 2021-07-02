@@ -36,8 +36,8 @@
                 </div>
             </div>
             <div class="category-body">
-                <ul class="category-list">
-                    <li class="category-item active">
+                <ul id="category-list" class="category-list">
+                    <li class="category-item">
                         <p class="category">school</p>
                         <img class="delete-category trash-can" src="../Assets/trash-can.png" alt="delete task">
                     </li>
@@ -126,6 +126,10 @@
         <img class="restore-task" src="../Assets/restore.png" alt="restore task"> <!--<div>Icons made by <a href="https://www.flaticon.com/authors/kirill-kazachek" title="Kirill Kazachek">Kirill Kazachek</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
         <img class="delete-task trash-can" src="../Assets/trash-can.png" alt="delete task">
       
+    </template>
+    <template id="category-template">
+        <p id="category-name" class="category"></p>
+        <img class="delete-category trash-can" src="../Assets/trash-can.png" alt="delete task">
     </template>
 </body>
 </html>
