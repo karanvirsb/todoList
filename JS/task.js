@@ -32,7 +32,15 @@ addGlobalEventListener('focusout', '.task-information', e =>{
 // this is working on moving the task to the completed section 
 
 addGlobalEventListener('click', '.task-checkboxes', e=>{
-    const task = e.target.parentElement;   
+    const task = e.target.parentElement;
+    // task.classList.add('')   
+    // completedTask.appendChild(task); 
+    
+    // if(task.parentElement.id === task_parent_id){
+    //     tasks.removeChild(task); 
+    //     renderCounts(); 
+    // }
+
     const taskInfo  = task.querySelector('.task-information').innerHTML.trim();
     
     if(task.parentElement.id === task_parent_id){
