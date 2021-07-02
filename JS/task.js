@@ -44,7 +44,7 @@ addGlobalEventListener('click', '.task-checkboxes', e=>{
     const taskInfo  = task.querySelector('.task-information').innerHTML.trim();
     
     if(task.parentElement.id === task_parent_id){
-        moveTo(taskInfo, completed_parent_id);
+        addTo(taskInfo, completed_parent_id);
         tasks.removeChild(task);
         renderCounts();
     }
@@ -57,13 +57,13 @@ addGlobalEventListener('click', '.restore-task', e => {
     const task = e.target.parentElement; 
     const taskInfo = task.querySelector('.task-information').innerHTML.trim();
 
-    moveTo(taskInfo , task_parent_id); 
+    addTo(taskInfo , task_parent_id); 
     completedTask.removeChild(task);
     renderCounts();
 });
 
 
-function moveTo(taskDetails, section){
+function addTo(taskDetails, section){
 
     const completeTemp = completed_task_template.cloneNode(true);
     const taskTemp = task_template.cloneNode(true); 
