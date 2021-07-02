@@ -207,7 +207,7 @@ label #menu{
     margin-bottom: 1rem;
 }
 
-.tasks{
+#task-div{
     overflow-y: auto;
 }
 
@@ -264,7 +264,7 @@ img.delete-task{
 
 /* completed */
 
-.completed-tasks{
+#completed-div{
     overflow-y: auto;
 }
 
