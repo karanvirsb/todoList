@@ -30,7 +30,7 @@ function renderTasks(){
         if(item.id === selected_list_id)
         {
             item.tasks.forEach(task =>{
-                addTo(task_parent_id, task.name, selected_list_id);
+                addTo(task_parent_id, task.name);
             })
         } 
     });
@@ -41,7 +41,7 @@ function renderCompleted(){
         if(item.id === selected_list_id)
         {
             item.complete.forEach(task =>{
-                addTo(task_parent_id, complete.name, selected_list_id);
+                addTo(task_parent_id, complete.name);
             })
         } 
     });
@@ -102,7 +102,7 @@ addGlobalEventListener('click', '.trash-can', e=>{
   
 });
 
-function addTo(taskDetails, section, selectedCategoryId){
+function addTo(taskDetails, section){
 
     const completeTemp = completed_task_template.cloneNode(true);
     const taskTemp = task_template.cloneNode(true); 
