@@ -207,7 +207,7 @@ label #menu{
     margin-bottom: 1rem;
 }
 
-.tasks{
+#task-div{
     overflow-y: auto;
 }
 
@@ -264,7 +264,7 @@ img.delete-task{
 
 /* completed */
 
-.completed-tasks{
+#completed-div{
     overflow-y: auto;
 }
 
@@ -364,13 +364,15 @@ img.delete-task{
 .category-list{
     width: 100%;
     list-style-type: none;
+    overflow-x: hidden;
 }
 
 .category-item {
-    padding: 1rem;
+    position: relative;
+    padding: 1.5rem;
     cursor: pointer; 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
     border-radius: 10px 0px 0px 10px;
     margin-bottom: 10px;  
 }
@@ -380,17 +382,15 @@ img.delete-task{
 }
 
 .category-item p{
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
-    width: 75%;
+    width: max-content;
 }
 
 .delete-category{
     width: 25px;
-    justify-self: flex-end;
     position: relative;
-    left: 50px; 
 }
 
 .category-list .active{
