@@ -10,41 +10,44 @@ const category_template = document.querySelector('#category-template').content.c
 const completed_task_template = document.querySelector('.completed-template');
 const task_template = document.querySelector('.task-template');  
 
+const task_parent_id = 'tasks'; 
+const completed_parent_id = 'completed-tasks';
+
+const completedTask = document.querySelector('#completed-tasks');
+const tasks = document.querySelector('#tasks'); 
 
 function render(){
-    clearElements(category_list); 
+    clearElements(category_list);
+    clearElements(tasks)
+    clearElements(completedTask);  
     categorys.forEach(item =>{  
         if(item.id === selected_list_id){
             addToCategory(item.name,item.id, true);
+            renderTasks(item); 
+            renderCompleted(item); 
         }
         else{
             addToCategory(item.name, item.id, false);
         }
-    });
-    renderTasks(); 
-    renderCompleted(); 
+    });  
 }
 
-function renderTasks(){
-    categorys.forEach(item =>{
-        if(item.id === selected_list_id)
-        {
-            item.tasks.forEach(task =>{
-                addTo(task_parent_id, task.name);
-            })
-        } 
+function renderTasks(category){
+    if(category.tasks === []){
+        return;
+    }
+    category.tasks.forEach(task => {
+        addTo(task.id, task.name, task_parent_id);
     });
 }
 
-function renderCompleted(){
-    categorys.forEach(item =>{
-        if(item.id === selected_list_id)
-        {
-            item.complete.forEach(task =>{
-                addTo(task_parent_id, complete.name);
-            })
-        } 
-    });
+function renderCompleted(category){
+    if(category.complete === []){
+        return; 
+    }
+    category.complete.forEach(task => {
+        addTo(task.id,task.name,completed_parent_id);
+    })
 }
 
 function saveAndRender(){
@@ -67,10 +70,46 @@ function createCategory(value){
     return {id: Date.now().toString(), name: value, tasks: [], complete: []};
 }
 
+function findCategory(){
+    return categorys.find(item => item.id === selected_list_id) || [];
+}
+
 function createTask(value){
     const task = {id: Date.now().toString(), name: value}
-    categorys[selected_list_id]?.tasks.push(task); 
+    const categoryTask = categorys.find(item => item.id === selected_list_id); 
+    categoryTask.tasks.push(task);
 }
+
+function findTask(taskId){
+    const categoryTask = findCategory(); 
+    return categoryTask.tasks.find(item => item.id === taskId) || []; 
+}
+
+function removeTask(taskId){
+    const categoryTask = findCategory(); 
+    categoryTask.tasks = categoryTask.tasks.filter(item => item.id != taskId);
+}
+
+function updateTask(value, id){
+    const categoryTask = findCategory();
+    const task = findTask(id);
+    task.name = value;  
+}
+
+function createCompletedTask(taskId){
+    const categoryTask = findCategory(); 
+    const completed = findTask(taskId); 
+    categoryTask.complete.push(completed); 
+    removeTask(taskId); 
+}
+
+function removeCompletedTask(taskId){
+    const categoryTask = findCategory();
+    categoryTask.complete = categoryTask.complete.filter(item => item.id != taskId);
+}
+
+
+
 
 /** allows you to add event listeners globally event to dynamically added elements
  * @param  {string} type - type of event listen ex. 'click'
@@ -95,14 +134,17 @@ addGlobalEventListener('click', '.trash-can', e=>{
             categorys = categorys.filter(item =>  item.id !== remove_item.dataset.categoryId)
             selected_list_id = categorys.length <= 1 ?  null : categorys[0].id;
             saveAndRender();
+        } else{
+            removeTask(remove_item.dataset.taskId);
+            removeCompletedTask(remove_item.dataset.taskId); 
+            saveAndRender(); 
         }
         remove_item.remove(); 
     }
     renderCounts(); 
-  
 });
 
-function addTo(taskDetails, section){
+function addTo(taskId, taskDetails, section){
 
     const completeTemp = completed_task_template.cloneNode(true);
     const taskTemp = task_template.cloneNode(true); 
@@ -110,7 +152,7 @@ function addTo(taskDetails, section){
     let li; 
     switch(section){
         case completed_parent_id: 
-            li = makeTaskLi(['completed-item', 'task']);
+            li = makeTaskLi(['completed-item', 'task'], taskId);
             completeTemp.content.querySelector('.task-information').innerText = taskDetails; 
             li.append(completeTemp.content);   
             completedTask.appendChild(li);
@@ -118,7 +160,7 @@ function addTo(taskDetails, section){
 
         case task_parent_id:
 
-            li = makeTaskLi(['task-item', 'task']);
+            li = makeTaskLi(['task-item', 'task'], taskId);
             taskTemp.content.querySelector('.task-information').innerText = taskDetails;
             li.appendChild(taskTemp.content); 
             tasks.appendChild(li);
@@ -131,9 +173,10 @@ function addTo(taskDetails, section){
    
 }
 
-function makeTaskLi(arr){
+function makeTaskLi(arr, taskId){
     const li = document.createElement('li');
     li.classList.add(...arr);
+    li.dataset.taskId = taskId; 
     return li; 
 }
 
