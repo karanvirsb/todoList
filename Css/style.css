@@ -370,11 +370,13 @@ img.delete-task{
 .category-item {
     position: relative;
     padding: 1.5rem;
+    width: 100%; 
     cursor: pointer; 
     display: grid;
-    grid-template-columns: 10fr 1fr;
+    grid-template-columns: 80% 15%;
     border-radius: 10px 0px 0px 10px;
-    margin-bottom: 10px;  
+    margin-bottom: 10px;
+    overflow-x: hidden;
 }
 
 .category-item:hover{
@@ -385,12 +387,16 @@ img.delete-task{
     font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
-    width: max-content;
+    width: 100%;
+    word-wrap: break-word;
+    white-space: normal;
+
 }
 
 .delete-category{
     width: 25px;
-    position: relative;
+    grid-column: 3/4;
+
 }
 
 .category-list .active{
