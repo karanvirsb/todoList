@@ -281,11 +281,11 @@ img.delete-task{
 
 }
 
-.restore-task{
+/* .restore-task{
     width: 25px;
     cursor: pointer;
     margin-right: 15px;
-}
+} */
 
 
 
@@ -494,6 +494,7 @@ img.delete-task{
     font-weight: bold;
     border: none;
     cursor: pointer;
+    border-radius: 7px;
 }
 
 #yes-btn:hover{
@@ -506,6 +507,21 @@ img.delete-task{
 
 #no-btn:hover{
     background: rgb(155, 155, 155);
+}
+
+/* clear buttons wrapper*/
+
+.button-wrapper{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
 }
 
 /*buttons*/
@@ -553,8 +569,20 @@ img.delete-task{
 
 /* delete list and task buttons */
 
-{
-    
+.clear-btns{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+    background: var(--button-color);
+    padding: 1rem 3rem;
+    border: 0.1px solid black;
+    border-radius: 7px;
+    margin: 0rem 1rem;
+}
+
+.clear-btns:hover{
+    background: var(--button-hover-color);
+    box-shadow: 2px 2px 1px 1px rgb(131, 131, 131);
 }
 
 
