@@ -1,7 +1,3 @@
-
-const completed_task_template = document.querySelector('.completed-template');
-const task_template = document.querySelector('.task-template');
-
 const completedTask = document.querySelector('#completed-tasks');
 const tasks = document.querySelector('#tasks'); 
 
@@ -44,7 +40,7 @@ addGlobalEventListener('click', '.task-checkboxes', e=>{
     const taskInfo  = task.querySelector('.task-information').innerHTML.trim();
     
     if(task.parentElement.id === task_parent_id){
-        addTo(taskInfo, completed_parent_id);
+        createCategory(taskInfo);
         tasks.removeChild(task);
         renderCounts();
     }
@@ -57,43 +53,9 @@ addGlobalEventListener('click', '.restore-task', e => {
     const task = e.target.parentElement; 
     const taskInfo = task.querySelector('.task-information').innerHTML.trim();
 
-    addTo(taskInfo , task_parent_id); 
+    createTask(taskInfo); 
     completedTask.removeChild(task);
     renderCounts();
 });
 
 
-function addTo(taskDetails, section){
-
-    const completeTemp = completed_task_template.cloneNode(true);
-    const taskTemp = task_template.cloneNode(true); 
- 
-    let li; 
-    switch(section){
-        case completed_parent_id: 
-            li = makeTaskLi(['completed-item', 'task']);
-            completeTemp.content.querySelector('.task-information').innerText = taskDetails; 
-            li.append(completeTemp.content);   
-            completedTask.appendChild(li);
-            break;
-
-        case task_parent_id:
-
-            li = makeTaskLi(['task-item', 'task']);
-            taskTemp.content.querySelector('.task-information').innerText = taskDetails;
-            li.appendChild(taskTemp.content); 
-            tasks.appendChild(li);
-            break; 
-
-        default:
-            console.log(`There is no section named ${section}`)
-            break; 
-    }
-   
-}
-
-function makeTaskLi(arr){
-    const li = document.createElement('li');
-    li.classList.add(...arr);
-    return li; 
-}
