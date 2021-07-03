@@ -6,19 +6,24 @@ const category_input = document.querySelector('#add-category');
 
 task_form.addEventListener('submit', e=>{
     e.preventDefault();
-    if(task_input?.value.trim() || selected_list_id === null){
+    if(task_input.value.trim() === '' || selected_list_id === 'null' || selected_list_id === null){
+        task_input.value = '';
+        alert('You have to select a category before entering a task');  
+        return; 
     }
     else{
         createTask(task_input.value);
+        task_input.value = ''; 
+        saveAndRender();
+        renderCounts();
     }
-    task_input.value = ''; 
 });
 
 category_form.addEventListener('submit', e=>{
     e.preventDefault();
     if(category_input?.value.trim()){
         categorys.push( createCategory(category_input.value));
-        saveAndRender();  
+        saveAndRender(); 
     }
     category_input.value = ''; 
 });
