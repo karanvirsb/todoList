@@ -16,6 +16,22 @@
    
 </head>
 <body>
+    <div class="modal-bg">
+        <div id="modal">
+            <div id="modal-header">
+                <h2 id="modal-title">Title</h2>
+                <i class="fa fa-times" id="close-modal"></i>
+            </div>
+            <div id="modal-body">
+                <p class="question">Are you sure you want to remove <span class="item"></span>
+                </p>
+            </div>
+            <div id="modal-footer">
+                <button id='yes-btn' class='modal-btn' value='1'>yes</button>
+                <button id="no-btn" class="modal-btn" value='1'>no</button>
+            </div>
+        </div>
+    </div>
     <div id="hover-menu-open">
     </div>
     <input type="checkbox" id="check"> 
@@ -87,6 +103,10 @@
                     <ul id="completed-tasks" class="completed-tasks"></ul>
                 </div>
             </div>
+        </div>
+        <div class='button-wrapper'>
+            <button id="clear-complete-list-btn" class=" clear-btns">Clear Complete List</button>
+            <button id="clear-task-list-btn" class="clear-btns">Clear Task List</button>
         </div>
     </div>
     
