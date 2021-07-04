@@ -1,4 +1,5 @@
-
+const clear_task_btn = document.querySelector('#clear-task-list-btn');
+const clear_complete_task_btn = document.querySelector('#clear-complete-list-btn');
 
 // finds the parent of the edit task and allows editing of the task 
 addGlobalEventListener('click', '.edit-task', e=>{
@@ -42,6 +43,17 @@ addGlobalEventListener('click', '.task-checkboxes', e=>{
     }
 })
 
+clear_task_btn.addEventListener('click', () => {
+    removeAllTasks();
+    saveAndRender();
+    renderCounts();
+});
+
+clear_complete_task_btn.addEventListener('click', () => {
+    removeAllCategories();
+    saveAndRender(); 
+    renderCounts();
+});
 
 // This will restore the task back upto tasks from completed
 
