@@ -56,6 +56,7 @@ header{
     width: 100%;
     display:flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
@@ -129,12 +130,12 @@ label #menu{
 
 
 .todo-info{
-    width: 85%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0rem 4rem;
+    margin: 0rem 0rem;
 }
 
 .remaining-tasks{
@@ -411,7 +412,7 @@ img.delete-task{
 .category-footer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 0rem 1rem;
 }
 
