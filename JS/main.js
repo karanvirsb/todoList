@@ -74,6 +74,10 @@ function findCategory(){
     return categorys.find(item => item.id === selected_list_id) || [];
 }
 
+function removeAllCategories(){
+    categorys = []; 
+}
+
 function createTask(value){
     const task = {id: Date.now().toString(), name: value}
     const categoryTask = categorys.find(item => item.id === selected_list_id); 
@@ -96,6 +100,11 @@ function updateTask(value, id){
     task.name = value;  
 }
 
+function removeAllTasks(){
+    const categoryTask = findCategory();
+    categoryTask.tasks = [];
+}
+
 function createCompletedTask(taskId){
     const categoryTask = findCategory(); 
     const completed = findTask(taskId); 
@@ -108,7 +117,10 @@ function removeCompletedTask(taskId){
     categoryTask.complete = categoryTask.complete.filter(item => item.id != taskId);
 }
 
-
+function removeAllCompletedTasks(){
+    const categoryTask = findCategory();
+    categoryTask.complete = [];
+}
 
 
 /** allows you to add event listeners globally event to dynamically added elements
