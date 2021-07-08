@@ -36,17 +36,19 @@
     <div id="hover-menu-open">
     </div>
     <!-- <input type="checkbox" id="check"> 
-    <label for="check">
+    <label for="check"> -->
+    <div class="menu-btns"> 
         <i class="fa fa-bars" id ="menu"></i>
         <i class="fa fa-times" id ="cancel"></i>
-    </label> -->
-    <div class="side-menu">
+    </div>
+    <!-- </label> -->
+    <div id="side-menu">
         <div class="category-wrapper">
             <div class="category-header">
                 <div class="category-title">
                     <h1>CATEGORIES</h1>
                 </div>
-                <div >
+                <div id="add-new-category-wrapper">
                     <form action="" class="add-new-category" id="category-form">
                         <input id="add-category" type="text" placeholder="Add new category" aria-details="add new category">
                         <button id="add-category-btn" class="btn">add category</button>
@@ -93,25 +95,31 @@
         </header>
         <div class="tasks-wrapper">
             <div class="card task-card">
-                <p class="card-title">Tasks</p>
+                <div class="card-header">
+                    <p class="card-title">Tasks</p>
+                    <button id="clear-task-list-btn" class="clear-btns">Clear Task List</button>
+                </div>
                 <div id='task-div'>
                     <ul id="tasks" class="tasks"></ul>
                 </div>
             </div>
             <div class="card completed-card">
-                <p class="card-title">Completed</p>
+                <div class="card-header">
+                    <p class="card-title">Completed</p>
+                    <button id="clear-complete-list-btn" class=" clear-btns">Clear Complete List</button>
+                </div>
                 <div id="completed-div">
                     <ul id="completed-tasks" class="completed-tasks"></ul>
                 </div>
             </div>
         </div>
-        <div class='button-wrapper'>
+        <!-- <div class='button-wrapper'>
             <div class="button-container">
-                <button id="clear-task-list-btn" class="clear-btns">Clear Task List</button>
-                <button id="clear-complete-list-btn" class=" clear-btns">Clear Complete List</button>
+                
+                
             </div>
            
-        </div>
+        </div> -->
     </div>
     
     <template class="task-template">
