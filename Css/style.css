@@ -26,18 +26,17 @@ body{
 #hover-menu-open{
     opacity: 0;
     position: fixed;
-    top: 55%; 
-    transform: translateY(-50%);
+    top: 15%; 
     left: 0; 
     width: 50px;
-    height: 70vh; 
+    height: 100vh; 
     z-index: 1111; 
+    background: #000;
 }
 
 #hover-menu-open:hover{
-    opacity: 100;
-    background: linear-gradient(to right, #66ccff 0%, #ffffff 100%);
-}
+    opacity: 5;
+    background: linear-gradient(90deg, rgba(236,236,236,1) 15%, rgba(242,242,242,1) 35%, rgba(255,255,255,0.1) 100%);}
 
 /*Header */
 header{
@@ -61,12 +60,8 @@ header{
 }
 
 /* menu button */
-/* 
-#check{
-    display: none; 
-}
-
-label #cancel{
+ 
+#cancel{
     position: absolute;
     cursor: pointer;
     left: -50px;
@@ -76,7 +71,7 @@ label #cancel{
     transition: 0.5s ease-out;
 }
 
-label #menu{
+#menu{
     position: absolute;
     z-index: 100;
     top: 25px;
@@ -87,8 +82,12 @@ label #menu{
     
 }
 
+/* #check{
+    display: none;
+}
+
 #check:checked ~ .side-menu {
-    left: 0;
+    left: 0px;
 }
 
 #check:checked ~ label #cancel {
@@ -109,7 +108,7 @@ label #menu{
 #check:not(:checked) ~ .wrapper{
     margin-left: 0px;
     transition: 0.5s ease-out;
-} */
+}  */
 
 /* .menu{
     background: #000;
@@ -126,7 +125,7 @@ label #menu{
     width: 30px;
     background: #fff;
     height: 3px; 
-}  */
+} */
 
 
 .todo-info{
@@ -139,16 +138,16 @@ label #menu{
 }
 
 .remaining-tasks{
-    font-size: var(--header-font-size);
+    font-size: clamp(16px, 2vw,var(--header-font-size));
 }
 
 #todo-title{
-    font-size: 50px;
+    font-size: clamp(45px, 5vw, 55px);
     text-transform: uppercase;
 }
 
 .completed{
-    font-size: var(--header-font-size);
+    font-size: clamp(16px, 2vw,var(--header-font-size));
 }
 
 /* Add tasks section */
@@ -169,11 +168,11 @@ label #menu{
 
 #add-task{
     width: 75%;
-    height: 45px;
+    height: clamp(25px,45px,45px);
     border-radius: 7px 0px 0px 7px;
     border: solid 2px black;
     padding: 0em 1rem; 
-    font-size: 18px; 
+    font-size: clamp(12px, 2vw, 18px); 
 }
 
 #add-task:focus{
@@ -201,6 +200,12 @@ label #menu{
 
 .card-title{
     font-size: 20px;
+
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 1rem;
 }
 
@@ -292,7 +297,7 @@ img.delete-task{
 
 /* Category menu */
 
-.side-menu{
+#side-menu{
     display:block;
     background: #80B0E8;
     position: fixed;
@@ -327,6 +332,12 @@ img.delete-task{
     cursor: pointer;
 }
 
+#add-new-category-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .add-new-category{
     margin: 1rem 0.5rem;
     display:flex;
@@ -358,7 +369,7 @@ img.delete-task{
 }
 
 .category-body{
-    margin-left: 1rem;
+    margin: 0rem 0.5rem; 
     overflow-y: auto; 
 }
 
@@ -375,7 +386,7 @@ img.delete-task{
     cursor: pointer; 
     display: grid;
     grid-template-columns: 80% 15%;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 7px 7px 7px 7px;
     margin-bottom: 10px;
     overflow-x: hidden;
 }
@@ -453,21 +464,20 @@ img.delete-task{
 
 #modal-title{
     width: 100%; 
-    font-size: 3em;
+    font-size: clamp(25px,2.5vw,5em);
     text-align: center;  
 }
 
 #close-modal{
     position: absolute;
     right: 10px; 
-    font-size: 2em;
+    font-size: clamp(25px,1vw,2em);
     cursor: pointer;
     padding: 10px;
 }
 
 #close-modal:hover{
     color: red; 
-    border: 0.1px solid grey; 
 }
 
 #modal-body{
@@ -478,20 +488,21 @@ img.delete-task{
     margin: 0px 10px;
 }
 .question{
-    font-size: 1.5em;
+    font-size: clamp(15px,2vw,1.5em);
 }
 
 #modal-footer{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: -0.5rem;
 }
 
 .modal-btn{
     background: #008CBA;
     padding: 1em 3.5em;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: clamp(10px,2.5vw,1em);
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -541,9 +552,12 @@ img.delete-task{
 /* add new task btn */
 
 .add-task-btn{
+    min-width: 70px;
+    height: clamp(25px,45px,45px);
     width: max-content; 
+    font-size: clamp(11px, 1vw, 16px); 
     text-transform: uppercase;
-    padding: 0.75rem; 
+    padding: clamp(0.25rem,0.5rem,0.76rem); 
     margin-left: -2px;
     border: solid 2px black;
     border-left: none;
@@ -573,18 +587,65 @@ img.delete-task{
 .clear-btns{
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1em;
+    font-size: clamp(11px, 2vw, 0.95rem);
     background: var(--button-color);
-    padding: 1rem 3rem;
+    padding: clamp(0.25rem,0.5rem,0.75rem);
     border: 0.1px solid black;
     border-radius: 7px;
-    margin: 0rem 1rem;
 }
 
 .clear-btns:hover{
     background: var(--button-hover-color);
-    box-shadow: 2px 2px 1px 1px rgb(131, 131, 131);
 }
 
 
+/* media queries */
+
+@media (min-width: 751px){ 
+    #hover-menu-open{
+        display: block; 
+        top: 0%; 
+    }
+
+    .menu-btns{
+        display: none; 
+    }
+}
+
+@media (max-width: 1366px){
+    .menu-btns{
+        display: block; 
+    }
+
+    #hover-menu-open{
+        top: 20%; 
+    }
+}
+@media (max-width: 560px) {
+    #hover-menu-open{
+        display: none; 
+    }
+    .todo-info{
+        display:flex;
+        flex-direction: column;
+    }
+    .todo-title{
+        order: 1; 
+    }
+    .remaining-tasks{
+        order: 2;
+    }
+    .completed{
+        order: 3; 
+    }
+
+    .card-header{
+        margin: 0rem -2rem; 
+    }
+
+    #modal{
+        width: 85vw;
+        height: 30vh;
+    }
+}
 
