@@ -14,14 +14,19 @@ const task_parent_id = 'tasks';
 const completed_parent_id = 'completed-tasks';
 
 const completedTask = document.querySelector('#completed-tasks');
-const tasks = document.querySelector('#tasks'); 
+const tasks = document.querySelector('#tasks');
+
+const todo_title = document.querySelector('#todo-title'); 
+const trashCan = document.querySelectorAll('.trash-can'); 
 
 function render(){
+    todo_title.innerHTML = ''; 
     clearElements(category_list);
     clearElements(tasks)
     clearElements(completedTask);  
     categorys.forEach(item =>{  
         if(item.id === selected_list_id){
+            todo_title.innerHTML = item.name; 
             addToCategory(item.name,item.id, true);
             renderTasks(item); 
             renderCompleted(item); 
@@ -140,8 +145,9 @@ function addGlobalEventListener(type ,selector, callback){
 
 addGlobalEventListener('click', '.trash-can', e=>{
     const remove_item = e.target.parentElement;
-    console.log(remove_item.dataset.categoryId)
-    if(confirm(`Are you sure you want to remove this ${e.target}`)){
+    
+    const userResponse = confirm(`Are you sure you want to remove this ${remove_item.dataset.name}`); 
+    if(userResponse){
         if(e.target.classList[0] === 'delete-category'){
             categorys = categorys.filter(item =>  item.id !== remove_item.dataset.categoryId)
             selected_list_id = categorys.length <= 1 ?  null : categorys[0].id;
@@ -189,13 +195,15 @@ function makeTaskLi(arr, taskId){
     const li = document.createElement('li');
     li.classList.add(...arr);
     li.dataset.taskId = taskId; 
+    li.dataset.name = 'task';  
     return li; 
 }
 
 function addToCategory(value, id, isActive){
     const li = document.createElement('li');
     li.className = 'category-item';
-    li.dataset.categoryId = id; 
+    li.dataset.categoryId = id;
+    li.dataset.name = 'category'; 
     if(isActive)
         li.classList.add('active'); 
 
