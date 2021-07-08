@@ -14,14 +14,18 @@ const task_parent_id = 'tasks';
 const completed_parent_id = 'completed-tasks';
 
 const completedTask = document.querySelector('#completed-tasks');
-const tasks = document.querySelector('#tasks'); 
+const tasks = document.querySelector('#tasks');
+
+const todo_title = document.querySelector('#todo-title'); 
 
 function render(){
+    todo_title.innerHTML = ''; 
     clearElements(category_list);
     clearElements(tasks)
     clearElements(completedTask);  
     categorys.forEach(item =>{  
         if(item.id === selected_list_id){
+            todo_title.innerHTML = item.name; 
             addToCategory(item.name,item.id, true);
             renderTasks(item); 
             renderCompleted(item); 
