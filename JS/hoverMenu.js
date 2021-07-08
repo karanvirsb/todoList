@@ -13,6 +13,7 @@ menu_btn.addEventListener('click', () => {
     }else{
         side_menu.style.left = '0px'; 
         main_wrapper.style.transition = '0.5s ease-out';
+        side_menu.style.transition = '0.5s ease-out';
         main_wrapper.style.marginLeft = '350px'; 
         close_btn.style.left = '305px';
     }
@@ -25,6 +26,7 @@ hover_over_div.addEventListener('mouseover', () => {
         side_menu.style.left = '0px'; 
         hover_over_div.style.left = '-350px'; 
         main_wrapper.style.transition = '0.5s ease-out';
+        side_menu.style.transition = '0.5s ease-out';
         main_wrapper.style.marginLeft = '350px'; 
     }, 350)
 });
@@ -37,6 +39,7 @@ document.addEventListener('click', e => {
     }else{
         side_menu.style.left = '-550px';
         hover_over_div.style.left = '0px';
+        main_wrapper.style.transition = '0.5s ease-out';
         main_wrapper.style.marginLeft = ''; 
         close_btn.style.left = '-150px'; 
     } 
