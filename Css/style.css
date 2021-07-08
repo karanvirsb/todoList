@@ -431,7 +431,7 @@ img.delete-task{
 .modal-bg{
     display:none; 
     position: fixed;
-    z-index: 1111;
+    z-index: 9999;
     width: 100%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.274);
@@ -489,6 +489,7 @@ img.delete-task{
 }
 .question{
     font-size: clamp(15px,2vw,1.5em);
+    text-align: center;
 }
 
 #modal-footer{
