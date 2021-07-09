@@ -50,7 +50,7 @@ clear_task_btn.addEventListener('click', () => {
 });
 
 clear_complete_task_btn.addEventListener('click', () => {
-    removeAllCategories();
+    removeAllCompletedTasks();
     saveAndRender(); 
     renderCounts();
 });
