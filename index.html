@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo List</title>
+        <link rel="stylesheet" href="/Css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <script defer src="/JS/main.js"></script>
+        <script defer src="/JS/trashCanHover.js"></script>
+        <script defer src="/JS/task.js"></script>
+        <script defer src="/JS/taskCalculation.js"></script>
+        <script defer src="/JS/addListItems.js"></script>
+        <script defer src="/JS/category.js"></script>
+        <script defer src="/JS/hoverMenu.js"></script>
+        <script defer src="/JS/modal.js"></script>
+    </head>
+    <body>
+        <div class="modal-bg">
+            <div id="modal">
+                <div id="modal-header">
+                    <h2 id="modal-title">Title</h2>
+                    <i class="fa fa-times" id="close-modal"></i>
+                </div>
+                <div id="modal-body">
+                    <p id="modal-question" class="question">
+                        <span class="item"></span>
+                    </p>
+                </div>
+                <!-- <div id="modal-footer">
+                <button id='yes-btn' class='modal-btn' value='1'>yes</button>
+                <button id="no-btn" class="modal-btn" value='0'>no</button>
+            </div> -->
+            </div>
+        </div>
+        <div id="hover-menu-open"></div>
+        <!-- <input type="checkbox" id="check"> 
+    <label for="check"> -->
+        <div class="menu-btns">
+            <i class="fa fa-bars" id="menu"></i>
+            <i class="fa fa-times" id="cancel"></i>
+        </div>
+        <!-- </label> -->
+        <div id="side-menu">
+            <div class="category-wrapper">
+                <div class="category-header">
+                    <div class="category-title">
+                        <h1>CATEGORIES</h1>
+                    </div>
+                    <div id="add-new-category-wrapper">
+                        <form
+                            action=""
+                            class="add-new-category"
+                            id="category-form"
+                        >
+                            <input
+                                id="add-category"
+                                type="text"
+                                placeholder="Add new category"
+                                aria-details="add new category"
+                            />
+                            <button id="add-category-btn" class="btn">
+                                add category
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="category-body">
+                    <ul id="category-list" class="category-list">
+                        <!-- <li class="category-item">
+                        <p class="category">school</p>
+                        <img class="delete-category trash-can" src="../Assets/trash-can.png" alt="delete task">
+                    </li> -->
+                    </ul>
+                </div>
+                <div class="category-footer">
+                    <button id="clearBtn" class="cate-btn">
+                        Delete All categories
+                    </button>
+                    <!-- <button id="resetBtn" class="cate-btn">reset All</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <header>
+                <div class="info-header">
+                    <div class="todo-info">
+                        <div class="remaining-tasks">
+                            <p>
+                                <span id="task-remaining-name">Task</span>
+                                Remaining: <span id="tasks-left">0</span>
+                            </p>
+                        </div>
+                        <div class="todo-title">
+                            <h1 id="todo-title"></h1>
+                        </div>
+                        <div class="completed">
+                            <p>Completed: <span id="completed">0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-task-section">
+                    <form action="" id="task-form">
+                        <label class="add-task-label" for="add-task">
+                            <input
+                                type="text"
+                                id="add-task"
+                                placeholder="Add new task"
+                            />
+                            <button id="add-task-btn" class="btn add-task-btn">
+                                add task
+                            </button>
+                        </label>
+                    </form>
+                </div>
+            </header>
+            <div class="tasks-wrapper">
+                <div class="card task-card">
+                    <div class="card-header">
+                        <p class="card-title">Tasks</p>
+                        <button id="clear-task-list-btn" class="clear-btns">
+                            Clear Task List
+                        </button>
+                    </div>
+                    <div id="task-div">
+                        <ul id="tasks" class="tasks"></ul>
+                    </div>
+                </div>
+                <div class="card completed-card">
+                    <div class="card-header">
+                        <p class="card-title">Completed</p>
+                        <button id="clear-complete-list-btn" class="clear-btns">
+                            Clear Complete List
+                        </button>
+                    </div>
+                    <div id="completed-div">
+                        <ul id="completed-tasks" class="completed-tasks"></ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class='button-wrapper'>
+            <div class="button-container">
+                
+                
+            </div>
+           
+        </div> -->
+        </div>
+
+        <template class="task-template">
+            <input type="checkbox" class="task-checkboxes" />
+            <div class="task-information" contenteditable="false"></div>
+            <img
+                class="edit-task"
+                src="../Assets/editing.png"
+                alt="edit task"
+            />
+            <!--<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+            <img
+                class="delete-task trash-can"
+                src="../Assets/trash-can.png"
+                alt="delete task"
+            />
+        </template>
+        <template class="completed-template">
+            <input type="checkbox" class="task-checkboxes" />
+            <div class="task-information" contenteditable="false"></div>
+            <!-- <img class="restore-task" src="../Assets/restore.png" alt="restore task"> <div>Icons made by <a href="https://www.flaticon.com/authors/kirill-kazachek" title="Kirill Kazachek">Kirill Kazachek</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+            <img
+                class="delete-task trash-can"
+                src="../Assets/trash-can.png"
+                alt="delete task"
+            />
+        </template>
+        <template id="category-template">
+            <p id="category-name" class="category"></p>
+            <img
+                class="delete-category trash-can"
+                src="../Assets/trash-can.png"
+                alt="delete task"
+            />
+        </template>
+    </body>
+</html>
