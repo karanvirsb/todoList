@@ -77,7 +77,7 @@ Open up the html file index.html on linux
 # How it looks
 
 ## Home page
-![Home page](https://github.com/karanvirsb/todoList/blob/main/Assets/home_page.jpeg)
+![Home page](https://github.com/karanvirsb/todoList/blob/main/src/Assets/home_page.jpeg)
 
 ## Side Menu
-![Home page menu](https://github.com/karanvirsb/todoList/blob/main/Assets/home_page_menu.jpeg)
+![Home page menu](https://github.com/karanvirsb/todoList/blob/main/src/Assets/home_page_menu.jpeg)
