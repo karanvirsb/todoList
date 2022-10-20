@@ -1,51 +1,81 @@
 # Todo List
-Simple todo list that tracks the remaining tasks and the completed ones. 
+Simple todo list that tracks the remaining tasks and the completed ones. Also allows organization of todos with categories.  
 
 ## Run Locally 
 
 Clone the project <br/>
 
-Also Clone the backend [here](https://github.com/karanvirsb/bug_tracker_server) <br/>
-<!-- Also be sure to have MongoDb can be downloaded [here]() or create an account on MongoDb Atlas [here]() -->
-
 To begin cloning
 
 ```bash
-  
+  git clone https://github.com/karanvirsb/todoList.git
 ```
 
 Go to the project directory
 
 ``` bash
-  
+  cd todoList
 ```
 
-Install dependencies
+Open up the html file index.html on windows
 
-```bash
- 
+``` bash
+  start todoList
 ```
 
-Start the server 
+Open up the html file index.html on mac
 
-```bash
-  
+``` bash
+  open todoList
 ```
 
-Go to http://localhost:3000 in your browser and ... <br/>
+Open up the html file index.html on linux
+
+``` bash
+  (browsername) todoList
+```
 
 # How To
 
-## User Stories
+## Select Category
+- Drag the mouse to left side of the screen.
+- In the menu click on add new category, type in the category and then click on add category. 
+- Then select that category.
 
-## Tech Stack
-**Front-End:**  <br/>
-**Back-End:**
+## Create a todo
+- Click on add new task and type in the todo. Then click on add task. 
 
-## Features
+## Finished a todo
+- When completed a todo click on the checkbox.
 
-## Features being worked on 
-[x] <br/>
+## Edit a todo
+- To edit a todo click on the edit button at the end of the todo. 
+- Then type in your edit. 
+- Then press enter.
+
+## Delete a todo
+- To delete a todo click the delete button at the end of the todo. 
+
+# User Stories
+- Create a todo
+- Edit a todo
+- Create categories
+- Delete todo
+- Delete category
+
+# Tech Stack
+**Front-End:** HTML, CSS, JS <br/>
+
+
+# Features
+- Categories that allow organization
+- Clearing buttons
 
 
 # How it looks
+
+## Home page
+![Home page](https://github.com/karanvirsb/todoList/blob/main/Assets/home_page.jpeg)
+
+## Side Menu
+![Home page menu](https://github.com/karanvirsb/todoList/blob/main/Assets/home_page_menu.jpeg)
