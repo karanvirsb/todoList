@@ -1,6 +1,8 @@
 # Todo List
 Simple todo list that tracks the remaining tasks and the completed ones. Also allows organization of todos with categories.  
 
+Can be accessed [here](https://dev-kb-todolistc.netlify.app/)
+
 ## Run Locally 
 
 Clone the project <br/>
