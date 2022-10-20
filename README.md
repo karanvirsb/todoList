@@ -1,5 +1,5 @@
 # Todo List
-Simple todo list that tracks the remaining tasks and the completed ones. 
+Simple todo list that tracks the remaining tasks and the completed ones. Also allows organization of todos with categories.  
 
 ## Run Locally 
 
